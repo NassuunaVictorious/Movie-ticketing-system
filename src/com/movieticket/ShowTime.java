@@ -30,7 +30,6 @@ public class ShowTime {
         return dateTime;
     }
 
-    /** Ticket price is a whole number of shillings to avoid decimal rounding. */
     public int getTicketPrice() {
         return ticketPrice;
     }
@@ -44,6 +43,10 @@ public class ShowTime {
             throw new IndexOutOfBoundsException("Seat number is outside this showtime.");
         }
         return seats[index];
+    }
+    
+    public Seat[] getAllSeats() {
+        return seats;
     }
 
     public int getAvailableSeatCount() {

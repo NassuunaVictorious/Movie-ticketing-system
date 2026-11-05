@@ -1,5 +1,7 @@
 package com.movieticket;
 
+import java.util.Arrays;
+
 /** Represents a movie and its scheduled showtimes. */
 public class Movie {
     private final String title;
@@ -51,8 +53,12 @@ public class Movie {
         }
         return showTimes[index];
     }
+    
+    public ShowTime[] getAvailableShowTimes() {
+        return Arrays.copyOf(showTimes, showTimeCount);
+    }
 
-    /** Adds a showtime if this movie's showtime array has room. */
+   
     public boolean addShowTime(ShowTime showTime) {
         if (showTime == null || showTimeCount == showTimes.length) {
             return false;
